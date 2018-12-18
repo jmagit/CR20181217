@@ -1,4 +1,4 @@
-<h1>Hola {{nombre | uppercase}}</h1>
+<h1>Hola {{nombre | elipsis:20 | uppercase}}</h1>
 <p>
   <input type="text" [(ngModel)]="nombre" >
   <input type="button" value="saluda" (click)="saluda()">
@@ -35,4 +35,8 @@
   <input type="text" value="Tabarnia" #txtProvincia >
   <input type="button" value="añadir" (click)="add(txtProvincia.value)">
 </p>
+
+<indra-sizer [(size)]="fontsize"></indra-sizer>
+<p [style.font-size.px]="fontsize">
 {{listado | json}}
+</p>
