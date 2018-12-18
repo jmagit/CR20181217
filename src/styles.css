@@ -1,3 +1,14 @@
 .error {
   color: red;
 }
+.notificaciones .notificacion {
+  border: solid 1px red;
+  border-radius: 5px;
+}
+.notificaciones .notificacion button {
+  float: right;
+  font-size: 0.8em;
+}
+.notificaciones .center {
+  text-align: center;
+}
