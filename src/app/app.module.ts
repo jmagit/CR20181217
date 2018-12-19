@@ -20,6 +20,7 @@ import { DemosComponent } from './demos/demos.component';
 import { NotificationComponent } from './notification/notification.component';
 import { DinamicoComponent } from './dinamico/dinamico.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
+import { PERSONAS_COMPONENTS } from './personas/componente.component';
 
 @NgModule({
   declarations: [
@@ -28,18 +29,23 @@ import { CalculadoraComponent } from './calculadora/calculadora.component';
     DemosComponent,
     NotificationComponent,
     DinamicoComponent,
-    CalculadoraComponent
+    CalculadoraComponent,
+    PERSONAS_COMPONENTS
   ],
   imports: [
-    BrowserModule, FormsModule,
-    IndraCoreModule, ClientesModule, ProveedoresModule, CommonAppModule,
+    BrowserModule,
+    FormsModule,
+    IndraCoreModule,
+    ClientesModule,
+    ProveedoresModule,
+    CommonAppModule,
     AppRoutingModule
   ],
   providers: [
     LoggerService,
-    {provide: ERROR_LEVEL, useValue: environment.ERROR_LEVEL },
-    {provide: LOCALE_ID, useValue: 'es'},
+    { provide: ERROR_LEVEL, useValue: environment.ERROR_LEVEL },
+    { provide: LOCALE_ID, useValue: 'es' }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
