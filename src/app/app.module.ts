@@ -3,7 +3,7 @@ import localeEs from '@angular/common/locales/es';
 import localeEsExtra from '@angular/common/locales/extra/es';
 registerLocaleData(localeEs, 'es', localeEsExtra);
 
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -38,6 +38,7 @@ import { CalculadoraComponent } from './calculadora/calculadora.component';
   providers: [
     LoggerService,
     {provide: ERROR_LEVEL, useValue: environment.ERROR_LEVEL },
+    {provide: LOCALE_ID, useValue: 'es'},
   ],
   bootstrap: [AppComponent]
 })

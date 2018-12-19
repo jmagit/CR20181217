@@ -2,12 +2,12 @@
 <table class="Calculadora">
   <tr>
       <th colspan="4" align="right">
-        <ng-container *ngIf="SepatadorDecimal === ','; then ResumenComa; else ResumenPunto;"></ng-container>
+        <ng-container *ngIf="SeparadorDecimal === ','; then ResumenComa; else ResumenPunto;"></ng-container>
       </th>
   </tr>
   <tr>
       <th colspan="4" align="right" class="Pantalla" >
-        <ng-container *ngIf="SepatadorDecimal === ','; then PantallaComa; else PantallaPunto;"></ng-container>
+        <ng-container *ngIf="SeparadorDecimal === ','; then PantallaComa; else PantallaPunto;"></ng-container>
         <!-- <input type="number" [(ngModel)]="Pantalla"> -->
       </th>
   </tr>
@@ -37,8 +37,12 @@
   <tr>
       <td width="25%"><input class="btnDigito" type="button" value="±" (click)="cambiaSigno()"></td>
       <td width="25%"><input class="btnDigito" type="button" value="0" (click)="ponDijito('0');"></td>
-      <td width="25%"><input class="btnDigito" type="button" value="{{SepatadorDecimal}}" (click)="ponComa()"></td>
+      <td width="25%"><input class="btnDigito" type="button" value="{{SeparadorDecimal}}" (click)="ponComa()"></td>
       <td width="25%"><input class="btnOperar" type="button" value="=" (click)="calcula('=');"></td>
+  </tr>
+  <tr>
+      <td width="25%"><input class="btnDigito" type="button" value="PI" (click)="ponOperando(Math.PI);"></td>
+      <td width="25%"><input class="btnOperar" type="button" value="x" (click)="calcula('x');"></td>
   </tr>
 </table>
 

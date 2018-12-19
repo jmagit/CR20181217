@@ -19,7 +19,7 @@ export class CalculadoraComponent implements OnInit, OnChanges {
 
   @Input() private init: string;
   @Output() updated: EventEmitter<any> = new EventEmitter();
-  private sepatadorDecimal: string = '.';
+  private separadorDecimal: string = '.';
 
   constructor(private out: LoggerService) { }
 
@@ -31,10 +31,10 @@ export class CalculadoraComponent implements OnInit, OnChanges {
   // }
   get Resumen(): string { return this.resumen; }
   get EsElResultado() { return this.limpiar; }
-  get SepatadorDecimal() { return this.sepatadorDecimal; }
-  @Input() set SepatadorDecimal(value: string) {
-    if (value !== this.sepatadorDecimal && (value === '.' || value === ',')) {
-        this.sepatadorDecimal = value;
+  get SeparadorDecimal() { return this.separadorDecimal; }
+  @Input() set SeparadorDecimal(value: string) {
+    if (value !== this.separadorDecimal && (value === '.' || value === ',')) {
+        this.separadorDecimal = value;
     } else {
       this.out.error('Separador decimal no reconocido.');
     }
@@ -134,13 +134,13 @@ export class CalculadoraComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    if (this.init) {
-      this.ponOperando(this.init);
-    }
-  }
-  ngOnChanges(changes: SimpleChanges): void {
     // if (this.init) {
     //   this.ponOperando(this.init);
     // }
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.init) {
+      this.ponOperando(this.init);
+    }
   }
 }
