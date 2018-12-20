@@ -6,6 +6,7 @@ registerLocaleData(localeEs, 'es', localeEsExtra);
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { IndraCoreModule, LoggerService, ERROR_LEVEL } from 'src/indra-core';
@@ -21,6 +22,7 @@ import { NotificationComponent } from './notification/notification.component';
 import { DinamicoComponent } from './dinamico/dinamico.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { PERSONAS_COMPONENTS } from './personas/componente.component';
+import { PersonasViewModelService, PersonasDAOViewModelService } from './personas/servicios.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { PERSONAS_COMPONENTS } from './personas/componente.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     IndraCoreModule,
     ClientesModule,
     ProveedoresModule,
@@ -44,7 +47,8 @@ import { PERSONAS_COMPONENTS } from './personas/componente.component';
   providers: [
     LoggerService,
     { provide: ERROR_LEVEL, useValue: environment.ERROR_LEVEL },
-    { provide: LOCALE_ID, useValue: 'es' }
+    { provide: LOCALE_ID, useValue: 'es' },
+    { provide: PersonasViewModelService, useClass: PersonasDAOViewModelService},
   ],
   bootstrap: [AppComponent]
 })
