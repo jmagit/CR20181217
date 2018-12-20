@@ -24,6 +24,8 @@ import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { PERSONAS_COMPONENTS } from './personas/componente.component';
 import { PersonasViewModelService, PersonasDAOViewModelService } from './personas/servicios.service';
 import { AuthInterceptor } from './common-app/seguridad.services';
+import { MenuComponent } from './menu/menu.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { AuthInterceptor } from './common-app/seguridad.services';
     NotificationComponent,
     DinamicoComponent,
     CalculadoraComponent,
-    PERSONAS_COMPONENTS
+    PERSONAS_COMPONENTS,
+    MenuComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
